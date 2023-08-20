@@ -25,7 +25,8 @@
 								</v-slot>
 							</v-btn>
 							<v-btn>
-								좀 다르다
+								수정테스트
+                ㄴㅁㅇㅁㄴㅇ
 								<!-- <v-icon>mdi-heart</v-icon> -->
 							</v-btn>
 					</v-app-bar>
