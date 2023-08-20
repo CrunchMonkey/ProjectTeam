@@ -25,7 +25,7 @@
 								</v-slot>
 							</v-btn>
 							<v-btn>
-								sadadad
+								좀 다르다
 								<!-- <v-icon>mdi-heart</v-icon> -->
 							</v-btn>
 					</v-app-bar>
