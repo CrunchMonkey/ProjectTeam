@@ -25,7 +25,7 @@
 								</v-slot>
 							</v-btn>
 							<v-btn>
-								수정테스트
+								수정테스트()
                 ㄴㅁㅇㅁㄴㅇ
 								<!-- <v-icon>mdi-heart</v-icon> -->
 							</v-btn>
