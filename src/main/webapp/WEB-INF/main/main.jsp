@@ -25,7 +25,7 @@
 								</v-slot>
 							</v-btn>
 							<v-btn>
-								sadadad
+								수정테스트
 								<!-- <v-icon>mdi-heart</v-icon> -->
 							</v-btn>
 					</v-app-bar>
