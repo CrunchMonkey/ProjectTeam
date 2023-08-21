@@ -2,9 +2,8 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <html>
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@3.3.13/dist/vuetify.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
 <body>
@@ -13,21 +12,14 @@
 		<v-container class="grey lighten-5">
 			<v-row no-gutters>
 				<v-col cols="12" lg="12">
-					<v-app-bar :elevation="2">
+					<v-app-bar>
 						<v-img max-width="100" max-height="50" src="https://fastly.picsum.photos/id/80/100/50.jpg?hmac=rlttmDHdFZt7VpmdTRw_g1qUArCBaVmcrBjwtSFCD3k"></v-img>
 						<v-toolbar-title>AppBar Title</v-toolbar-title>
-							<v-btn >
-								<v-slot>
-									EMAP
-								</v-slot>
-								<v-slot>
-									<v-icon right>mdi-heart</v-icon>
-								</v-slot>
+							<v-btn>
+									EMAD
 							</v-btn>
 							<v-btn>
-								수정테스트
-                ㄴㅁㅇㅁㄴㅇ
-								<!-- <v-icon>mdi-heart</v-icon> -->
+								수정테스트(@)dd
 							</v-btn>
 					</v-app-bar>
 				</v-col>
@@ -63,22 +55,22 @@
 			</v-row>
 			<v-row no-gutters>
 				<v-col cols="12" lg="12">
-					<v-app-bar :elevation="2">
-						<v-img max-width="100" max-height="50" src="https://fastly.picsum.photos/id/80/100/50.jpg?hmac=rlttmDHdFZt7VpmdTRw_g1qUArCBaVmcrBjwtSFCD3k"></v-img>
-						<v-toolbar-title>AppBar Title</v-toolbar-title>
-							<v-btn >
-								<v-slot>
-									EMAP
-								</v-slot>
-								<v-slot>
-									<v-icon right>mdi-heart</v-icon>
-								</v-slot>
-							</v-btn>
-							<v-btn>
-								sadadad
-								<!-- <v-icon>mdi-heart</v-icon> -->
-							</v-btn>
-					</v-app-bar>
+      <v-toolbar color="red">
+
+    <v-toolbar-title>My Home</v-toolbar-title>
+
+    <v-toolbar-items>
+      <v-btn variant="text">News</v-btn>
+
+      <v-divider vertical></v-divider>
+
+      <v-btn variant="text">Blogg</v-btn>
+
+      <v-divider vertical></v-divider>
+
+      <v-btn variant="text">Mussic</v-btn>
+    </v-toolbar-items>
+  </v-toolbar>
 				</v-col>
 			</v-row>
 			<v-row no-gutters>
@@ -98,12 +90,15 @@
 	</v-app>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@3.2.20/dist/vue.global.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@3.3.13/dist/vuetify.min.js"></script>
 <script>
-	new Vue({
-		el: '#app',
-		vuetify: new Vuetify(),
+const { createApp } = Vue
+const { createVuetify } = Vuetify
+
+const vuetify = createVuetify()
+
+const app = Vue.createApp({
 		data () {
 			return {
 				colors: [
@@ -125,13 +120,17 @@
     	                    { id: 6, src: 'https://via.placeholder.com/200' },
     	                ],
     	                // Add more groups as needed
-    	            ]
+    	            ],
+    	            randomQuery: Math.random()
 				}
+			},
+		server: {
+			wathch: {
+				usePoling: true,
 			}
+		}
 	})
+	app.use(vuetify).mount('#app')
 </script>
-<style>
-
-</style>
 </body>
 </html>
