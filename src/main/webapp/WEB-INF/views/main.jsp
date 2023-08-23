@@ -4,7 +4,6 @@
 <head>
   <link href="https://cdn.jsdelivr.net/npm/vuetify@3.3.13/dist/vuetify.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ionicons@5.5.3/dist/ionicons.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
 <body>
@@ -30,16 +29,7 @@
 				<v-col>
 					<v-carousel>
 						<v-carousel-item v-for="(color, i) in colors" :key="color">
-							<v-sheet :color="color" height="100%" tile>
-								<v-row class="fill-height" align="center" justify="center">
-									<div class="text-h2">
-										Slide {{ i + 1 }}
-									</div>
-								</v-row>
-							</v-sheet>
-						</v-carousel-item>
-						<v-carousel-item>
-							<v-img lazy-src="https://picsum.photos/id/11/10/6" min-height="500px" max-height="500" min-width="500" src="https://play-lh.googleusercontent.com/ePO8kmDI3mHQbCcMeSZyhQcXzononmORfsgdVxX-LeQ0GitA2Fa4Xuq-YXxoe029TSU"></v-img>
+							<v-img min-height="600px" max-height="600px" min-width="600px" src="https://fastly.picsum.photos/id/202/1920/600.jpg?hmac=RDe6U0q28aa103_BF2HlEIr8mdFkUa6HL_Pcg69Bisw"></v-img>
 						</v-carousel-item>
 					</v-carousel>
 				</v-col>
@@ -178,22 +168,52 @@
 			</v-row>
 			<v-row no-gutters>
 				<v-col cols="2">
-					<v-select
-  label="Select"
-  :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
-></v-select>
+					<v-select label="Select" :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"></v-select>
 				</v-col>
 				<v-col cols="2">
-					<v-select
-  label="Select"
-  :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
-></v-select>
+					<v-select label="Select" :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"></v-select>
 				</v-col>
 				<v-col cols="2">
-					<v-select
-  label="Select"
-  :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
-></v-select>
+					<v-select label="Select" :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"></v-select>
+				</v-col>
+				<v-col cols="3">
+					<v-btn-toggle v-model="toggleValue" multiple>
+						<v-btn>즐겨찾기</v-btn>
+						<v-btn>모집중</v-btn>
+					</v-btn-toggle>
+				</v-col>
+				<v-col cols="3">
+					<v-text-field :rules="rules"></v-text-field>
+				</v-col>
+			</v-row>
+			<v-row no-gutters>
+				<v-col cols="3">
+					<div style="width: 100%; height: 200px; background-color: red">
+					</div>
+				</v-col>
+				<v-col cols="3">
+					<div style="width: 100%; height: 200px; background-color: orange">
+					</div>
+				</v-col>
+				<v-col cols="3">
+					<div style="width: 100%; height: 200px; background-color: yellow">
+					</div>
+				</v-col>
+				<v-col cols="3">
+					<div style="width: 100%; height: 200px; background-color: green">
+					</div>
+				</v-col>
+				<v-col cols="3">
+					<div style="width: 100%; height: 200px; background-color: blue">
+					</div>
+				</v-col>
+				<v-col cols="3">
+					<div style="width: 100%; height: 200px; background-color: Indigo">
+					</div>
+				</v-col>
+				<v-col cols="3">
+					<div style="width: 100%; height: 200px; background-color: purple">
+					</div>
 				</v-col>
 			</v-row>
 		</v-container>
