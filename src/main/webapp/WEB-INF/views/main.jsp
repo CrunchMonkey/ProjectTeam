@@ -26,10 +26,16 @@
 				</v-col>
 			</v-row>
 			<v-row no-gutters>
-				<v-col>
+				<v-col>	
 					<v-carousel>
-						<v-carousel-item v-for="(color, i) in colors" :key="color">
-							<v-img min-height="600px" max-height="600px" min-width="600px" src="https://fastly.picsum.photos/id/202/1920/600.jpg?hmac=RDe6U0q28aa103_BF2HlEIr8mdFkUa6HL_Pcg69Bisw"></v-img>
+						<v-carousel-item>
+							<v-img src="https://fastly.picsum.photos/id/985/1920/600.jpg?hmac=NxdC7UAMQHtkRDJfR1u3B6yM-i4AORTbjS-K5G_Z4Pc" aspect-ratio="1" max-height="100%" max-width="100%" min-height="100%" cover></v-img>
+						</v-carousel-item>
+						<v-carousel-item>
+							<v-img src="https://fastly.picsum.photos/id/985/1920/600.jpg?hmac=NxdC7UAMQHtkRDJfR1u3B6yM-i4AORTbjS-K5G_Z4Pc" aspect-ratio="1" max-height="100%" max-width="100%" min-height="100%" cover></v-img>
+						</v-carousel-item>
+						<v-carousel-item>
+							<v-img src="https://fastly.picsum.photos/id/985/1920/600.jpg?hmac=NxdC7UAMQHtkRDJfR1u3B6yM-i4AORTbjS-K5G_Z4Pc" aspect-ratio="1" max-height="100%" max-width="100%" min-height="100%" cover></v-img>
 						</v-carousel-item>
 					</v-carousel>
 				</v-col>
@@ -187,33 +193,51 @@
 				</v-col>
 			</v-row>
 			<v-row no-gutters>
-				<v-col cols="3">
-					<div style="width: 100%; height: 200px; background-color: red">
+				<v-col cols="12" sm="6" md="4" lg="3" >
+					<div style="width: 100%; height: 300px;">
+						<div style="width: 100%; height: 10%; background-color: red; float: left">
+							태그영역
+						</div>
+						<div style="width: 100%; height: 10%; background-color: orange; float: left">
+							마감일
+						</div>
+						<div style="width: 100%; height: 20%; background-color: yellow; float: left">
+							제목
+						</div>
+						<div style="width: 100%; height: 10%; background-color: green; float: left">
+							태그영역
+						</div>
+						<div style="width: 100%; height: 20%; background-color: blue; float: left">
+							아이콘영역
+						</div>
+						<div style="width: 100%; height: 20%; background-color: pink; float: left">
+							아이디/조회수/등등
+						</div>
+						<div style="width: 100%; height: 10%; background-color: magenta; float: left">
+							미정
+						</div>
 					</div>
 				</v-col>
-				<v-col cols="3">
-					<div style="width: 100%; height: 200px; background-color: orange">
-					</div>
+				<v-col cols="12" sm="6" md="4" lg="3">
+					2번째
 				</v-col>
-				<v-col cols="3">
-					<div style="width: 100%; height: 200px; background-color: yellow">
-					</div>
+				<v-col cols="12" sm="6" md="4" lg="3">
+					3번째
 				</v-col>
-				<v-col cols="3">
-					<div style="width: 100%; height: 200px; background-color: green">
-					</div>
+				<v-col cols="12" sm="6" md="4" lg="3">
+					4번째
 				</v-col>
-				<v-col cols="3">
-					<div style="width: 100%; height: 200px; background-color: blue">
-					</div>
+				<v-col cols="12" sm="6" md="4" lg="3">
+					5번째
 				</v-col>
-				<v-col cols="3">
-					<div style="width: 100%; height: 200px; background-color: Indigo">
-					</div>
+				<v-col cols="12" sm="6" md="4" lg="3">
+					6번째
 				</v-col>
-				<v-col cols="3">
-					<div style="width: 100%; height: 200px; background-color: purple">
-					</div>
+				<v-col cols="12" sm="6" md="4" lg="3">
+					7번째
+				</v-col>
+				<v-col cols="12" sm="6" md="4" lg="3">
+					8번째
 				</v-col>
 			</v-row>
 		</v-container>
