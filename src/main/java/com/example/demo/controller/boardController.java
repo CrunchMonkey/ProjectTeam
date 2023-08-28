@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @Controller
-public class testController {
+public class boardController {
 	
-	@GetMapping(value = "/")
+	@GetMapping(value = "afsafasf/")
 	public String test() throws Exception {
 		String jsp = "main";
 		return jsp;
