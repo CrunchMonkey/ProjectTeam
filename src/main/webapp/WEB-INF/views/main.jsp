@@ -27,7 +27,7 @@
 				<v-col>	
 					<v-carousel :show-arrows="false">
 						<v-carousel-item>
-							<v-img src=/images/image3.png" aspect-ratio="1" max-height="100%" max-width="100%" min-height="100%" cover></v-img>
+							<v-img src="/images/image3.png" aspect-ratio="1" max-height="100%" max-width="100%" min-height="100%" cover></v-img>
 						</v-carousel-item>
 						<v-carousel-item>
 							<v-img src="/images/image2.png" aspect-ratio="1" max-height="100%" max-width="100%" min-height="100%" cover></v-img>
@@ -46,10 +46,19 @@
 				</v-col>
 			</v-row>
 			<v-row no-gutters>
+				<v-col cols="12" lg="12">
+					<v-btn-toggle v-model="2">
+						<v-btn class="text-h5" variant="text">전체</v-btn>
+				      	<v-btn class="text-h5" variant="text">군단장 레이드</v-btn>
+				      	<v-btn class="text-h5" variant="text">어비스던전</v-btn>
+					</v-btn-toggle>
+				</v-col>
+			</v-row>
+			<v-row no-gutters>
 				<v-col>
-					<v-carousel cycle height=250px>
+					<v-carousel hide-delimiters="true" show-arrows="hover" height="auto">
 						<v-carousel-item>
-							<v-row height="auto">
+							<v-row>
 								<v-col cols="12" sm="6" md="4" lg="3" >
 									<v-card class="rounded-card" variant="outlined">
 										<v-container>
@@ -199,47 +208,56 @@
 					<v-text-field :rules="rules"></v-text-field>
 				</v-col>
 			</v-row>
-			<v-row no-gutters>
+			<v-row>
 				<v-col cols="12" sm="6" md="4" lg="3" >
-					<v-card class="rounded-card" variant="outlined">
+					<v-card class="rounded-card" variant="outlined" width="300px">
 						<v-container>
 							<v-row no-gutters>
-								<v-col class="pa-1" style="height: 30px;">
-									<v-btn color="primary" height="20px" prepend-icon="mdi-checkbox-marked-circle">
-										군단장
+								<v-col class="pa-1" style="height: 40px;">
+									<v-btn class="mr-1" rounded="xl" color="#282828" height="20px">
+										<p style="color: #FFFF9F">💀군단장</p>
 									</v-btn>
-									<v-btn color="primary" height="20px" prepend-icon="mdi-checkbox-marked-circle">
-										8인
-									</v-btn>
-								</v-col>
-							</v-row>
-							<v-row no-gutters>
-								<v-col class="pa-1" style="height: 30px;">
-									<h4>마감일| 2023.09.09</h4>
-								</v-col>
-							</v-row>
-							<v-row no-gutters>
-								<v-col class="pa-1" style="height: 60px;">
-									<h4>제목입니다</h4>
-								</v-col>
-							</v-row>
-							<v-row no-gutters>
-								<v-col class="pa-1" style="height: 30px;">
-									<v-btn color="primary" height="20px">태그
-										<v-icon end icon="mdi-checkbox-marked-circle"></v-icon>
+									<v-btn class="mr-1" rounded="xl" color="#282828" height="20px">
+										<p style="color: #FFFF9F">숙련</p>
 									</v-btn>
 								</v-col>
 							</v-row>
 							<v-row no-gutters>
-								<v-col class="pa-1" style="height: 30px;">
-									<v-icon color="success" icon="mdi-check-circle"></v-icon>
-									<v-icon color="success" icon="mdi-check-circle"></v-icon>
-									<v-icon color="success" icon="mdi-check-circle"></v-icon>
+								<v-col class="pa-1 text-h7" style="height: 40px;">
+									<p class="font-weight-medium" style="color: #a9a9a9">마감일 | 2023.09.09</p>
 								</v-col>
 							</v-row>
 							<v-row no-gutters>
-								<v-col class="pa-1" style="height: 30px;">
-									<h4>조회수/추천수</h4>
+								<v-col class="pa-1 text-h5" style="height: 80px;">
+									<p class="font-weight-black">제목입니다</p>
+								</v-col>
+							</v-row>
+							<v-row no-gutters>
+								<v-col class="pa-1" style="height: 40px;">
+									<v-btn class="mr-1" rounded="xl" color="#282828" height="20px">
+										<p style="color: #FFFF9F">딜러</p>
+									</v-btn>
+									<v-btn class="mr-1" rounded="xl" color="#282828" height="20px">
+										<p style="color: #FFFF9F">서포터</p>
+									</v-btn>
+									<v-btn class="mr-1" rounded="xl" color="#282828" height="20px">
+										<p style="color: #FFFF9F">제한없음</p>
+									</v-btn>
+								</v-col>
+							</v-row>
+							<v-row no-gutters>
+								<v-col class="pa-1" style="height: 40px;">
+									<img class="mr-3" src="https://fastly.picsum.photos/id/47/32/32.jpg?hmac=UAnh79EfsgmBQFnt0ltsvFYdjLc7bIk-lrhgfxCYeL0"/>
+									<img class="mr-3" src="https://fastly.picsum.photos/id/47/32/32.jpg?hmac=UAnh79EfsgmBQFnt0ltsvFYdjLc7bIk-lrhgfxCYeL0"/>
+									<img class="mr-3" src="https://fastly.picsum.photos/id/47/32/32.jpg?hmac=UAnh79EfsgmBQFnt0ltsvFYdjLc7bIk-lrhgfxCYeL0"/>
+								</v-col>
+							</v-row>
+							<v-row no-gutters justify="space-between">
+								<v-col class="pa-1 text-h6" style="height: 40px;" cols="5">
+									<p>조와와</p>
+								</v-col>
+								<v-col class="pa-1 text-h6" style="height: 40px;" cols="5">
+									<p>👁12 🗨14</p>
 								</v-col>
 							</v-row>
 							</v-container>
@@ -290,6 +308,9 @@ const { createVuetify } = Vuetify
 const vuetify = createVuetify()
 
 const app = Vue.createApp({
+	created() {
+			var name = ${name};
+		},
 		data () {
 			return {
 				colors: [
@@ -298,6 +319,7 @@ const app = Vue.createApp({
     		        'yellow darken-2',
     		        'red',
     		        'orange',
+    		        ${name},
     		        ],
     		        imageGroups: [
     	                [
