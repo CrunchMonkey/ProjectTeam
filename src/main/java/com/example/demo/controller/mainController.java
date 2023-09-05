@@ -8,8 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import java.util.*;
 
+import com.example.demo.model.raidBoardModel;
 import com.example.demo.service.mainService;
 
 @Controller
@@ -20,7 +21,7 @@ public class mainController {
 	
 	@GetMapping(value = "/")
 	public String mainBoard(Model model) throws Exception {
-		mainService.selectTest();
+		ArrayList<raidBoardModel> test = mainService.selectWeekHotBoardList();
 		model.addAttribute("name", "{\"name\": \"식빵\"}");
 		String jsp = "main";
 		return jsp;

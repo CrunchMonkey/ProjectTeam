@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.demo.mapper.mainMapper">
-	<select id="selectTest" resultType="string">
-		select count(*) from user_table
+	<select id="selectWeekHotBoardList" resultType="raidBoardModel">
+		SELECT board_id
+			 , content
+			 , deadLine
+			 , defficult_cd
+			 , defficult_Nm
+			 , discord_use
+			 , dungeon_div_cd
+			 , dungeon_div_nm
+			 , gate_num
+			 , id
+			 , party_url
+			 , person_num
+			 , pro_div_cd
+			 , pro_div_nm
+			 , reg_date
+			 , start_date
+			 , tag_div
+			 , title
+		  FROM raid_board_table
 	</select>
 </mapper>
