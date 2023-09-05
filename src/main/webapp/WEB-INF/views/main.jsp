@@ -193,13 +193,13 @@
 			</v-row>
 			<v-row class="mr-16 ml-16">
 				<v-col cols="2">
-					<v-select rounded="100px" label="dd" :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"></v-select>
+					<v-select label="레이드 종류" :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"></v-select>
 				</v-col>
 				<v-col cols="2">
-					<v-select label="Select" :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"></v-select>
+					<v-select label="레이드 이름" :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"></v-select>
 				</v-col>
 				<v-col cols="2">
-					<v-select label="Select" :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"></v-select>
+					<v-select label="숙련정도" :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"></v-select>
 				</v-col>
 				<v-col cols="3">
 					<v-btn-toggle v-model="toggleValue" multiple>
