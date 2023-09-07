@@ -20,6 +20,6 @@
 			 , start_date
 			 , tag_div
 			 , title
-		  FROM raid_board_table
+		  FROM PROJECTTEAMDB.raid_board_table
 	</select>
 </mapper>

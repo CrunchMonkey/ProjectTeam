@@ -30,6 +30,10 @@ dependencies {
 	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:10.1.0-M16'
 	implementation 'org.springframework.boot:spring-boot-devtools:3.1.2'
 	
+	implementation 'com.oracle.database.jdbc:ojdbc10:19.18.0.0'
+	implementation 'com.oracle.database.security:osdt_cert:21.9.0.0'
+	implementation 'com.oracle.database.security:oraclepki:21.10.0.0'
+	implementation 'com.oracle.database.security:osdt_core:21.9.0.0'
 }
 
 tasks.named('test') {
