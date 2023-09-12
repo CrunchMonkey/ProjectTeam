@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import org.json.simple.JSONObject;
+import org.json.simple.*;
 import org.json.simple.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,8 +21,38 @@ public class mainController {
 	
 	@GetMapping(value = "/")
 	public String mainBoard(Model model) throws Exception {
-		ArrayList<raidBoardModel> test = mainService.selectWeekHotBoardList();
-		model.addAttribute("name", "{\"name\": \"식빵\"}");
+		JSONParser jsonParser = new JSONParser();
+		JSONObject jsonObj = new JSONObject();
+		
+		ArrayList<raidBoardModel> weekHotBoardList = mainService.selectWeekHotBoardList();
+		for(int i=0; i<weekHotBoardList.size(); i++) {
+			JSONObject tempObj = new JSONObject();
+			raidBoardModel tempModel = weekHotBoardList.get(i);
+			
+			tempObj.put("boardId", tempModel.getBoardId()); //게시글 ID
+			tempObj.put("content", tempModel.getContent()); //게시글 내용
+			tempObj.put("deadLine", tempModel.getDeadLine()); //마감일
+			tempObj.put("defficultCd", tempModel.getDefficultCd()); //난이도 code
+			tempObj.put("defficultNm", tempModel.getDefficultNm()); //난이도
+			tempObj.put("discordUse", tempModel.getDiscordUse()); //디스코드 사용유무
+			tempObj.put("dungeonDivCd", tempModel.getDungeonDivCd()); //던전 구분 code
+			tempObj.put("dungeonDivNm", tempModel.getDungeonDivNm()); //던전 구분명
+			tempObj.put("gateNum", tempModel);//관문
+			tempObj.put("id", tempModel.getId()); //작성자 ID
+			tempObj.put("partyUrl", tempModel.getPartyUrl()); //오픈채티방 또는 구글폼
+			tempObj.put("personNum", tempModel.getPersonNum()); //모집인원
+			tempObj.put("proDivCd", tempModel.getProDivCd()); //숙련도 code
+			tempObj.put("proDivNm", tempModel.getProDivNm()); //숙련도
+			tempObj.put("regDate", tempModel.getRegDate()); //작성일
+			tempObj.put("startDate", tempModel.getStartDate()); //시작일
+			tempObj.put("tagDiv", tempModel.getTagDiv()); //태그(태그1,태그2,태그3...)
+			tempObj.put("title", tempModel.getTitle()); //글제목
+		}
+		
+		model.addAttribute("name", (JSONObject)jsonParser.parse("{\"name\": \"식빵\"}"));
+		model.addAttribute("name2", (JSONArray)jsonParser.parse("[{\"name\": \"식빵\"},{\"name\": \"식빵\"}]"));
+		model.addAttribute("color", "red");
+		//model.addAttribute("testArray", testArray);
 		String jsp = "main";
 		return jsp;
 	}

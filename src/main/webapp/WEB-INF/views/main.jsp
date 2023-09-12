@@ -193,7 +193,7 @@
 			</v-row>
 			<v-row class="mr-16 ml-16">
 				<v-col cols="2">
-					<v-select label="레이드 종류" :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"></v-select>
+					<v-select label="레이드 종류" :items=test></v-select>
 				</v-col>
 				<v-col cols="2">
 					<v-select label="레이드 이름" :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"></v-select>
@@ -212,7 +212,7 @@
 				</v-col>
 			</v-row>
 			<v-row class="mr-16 ml-16">
-				<v-col cols="12" sm="12" md="6" lg="4" xl="3">
+				<v-col v-for="index in 5" :key="1"  cols="12" sm="12" md="6" lg="4" xl="3">
 					<v-card class="rounded-card" variant="outlined">
 						<v-container>
 							<v-row no-gutters>
@@ -266,27 +266,6 @@
 							</v-container>
 					</v-card>
 				</v-col>
-				<v-col cols="12" sm="12" md="6" lg="4" xl="3">
-					<button @click="fetchData">Fetch Data</button>
-				</v-col>
-				<v-col cols="12" sm="12" md="6" lg="4" xl="3">
-					3번째
-				</v-col>
-				<v-col cols="12" sm="12" md="6" lg="4" xl="3">
-					4번째
-				</v-col>
-				<v-col cols="12" sm="12" md="6" lg="4" xl="3">
-					5번째
-				</v-col>
-				<v-col cols="12" sm="12" md="6" lg="4" xl="3">
-					6번째
-				</v-col>
-				<v-col cols="12" sm="12" md="6" lg="4" xl="3">
-					7번째
-				</v-col>
-				<v-col cols="12" sm="12" md="6" lg="3">
-					8번째
-				</v-col>
 			</v-row>
 			<v-row class="mr-16 ml-16">
 				<v-col cols="12">
@@ -313,6 +292,8 @@ const vuetify = createVuetify()
 const app = Vue.createApp({
 	created() {
 			var name = ${name};
+			var name2 = ${name2};
+			var color = JSON.parse('{"name": "Jack", "age": 30, "favoriteSport": "Football"}');
 		},
 		data () {
 			return {
@@ -320,7 +301,6 @@ const app = Vue.createApp({
 					'primary',
     		        'secondary',
     		        'yellow darken-2',
-    		        'red',
     		        'orange',
     		        ${name},
     		        ],
@@ -339,6 +319,7 @@ const app = Vue.createApp({
     	                ],
     	                // Add more groups as needed
     	            ],
+  
 				}
 			},
 			methods: {
