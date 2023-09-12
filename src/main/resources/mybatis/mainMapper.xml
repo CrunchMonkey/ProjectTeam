@@ -2,24 +2,24 @@
 
 <mapper namespace="com.example.demo.mapper.mainMapper">
 	<select id="selectWeekHotBoardList" resultType="raidBoardModel">
-		SELECT board_id
-			 , content
-			 , deadLine
-			 , defficult_cd
-			 , defficult_Nm
-			 , discord_use
-			 , dungeon_div_cd
-			 , dungeon_div_nm
-			 , gate_num
-			 , id
-			 , party_url
-			 , person_num
-			 , pro_div_cd
-			 , pro_div_nm
-			 , reg_date
-			 , start_date
-			 , tag_div
-			 , title
+		SELECT board_id AS boardId
+			 , content AS content
+			 , deadLine AS deadLine
+			 , defficult_cd AS defficultCd
+			 , defficult_Nm AS defficultNm
+			 , discord_use AS discordUse
+			 , dungeon_div_cd AS dungeonDiv
+			 , dungeon_div_nm AS dungeonDiv
+			 , gate_num AS geteNum
+			 , id AS id
+			 , party_url AS partyUrl
+			 , person_num AS personNum
+			 , pro_div_cd AS proDivCd
+			 , pro_div_nm AS proDivNm
+			 , reg_date AS regDate
+			 , start_date AS startDate
+			 , tag_div AS tagDiv
+			 , title AS title
 		  FROM PROJECTTEAMDB.raid_board_table
 	</select>
 </mapper>
