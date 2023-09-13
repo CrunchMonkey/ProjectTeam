@@ -19,6 +19,8 @@ public class raidBoardModel {
 	String startDate; //시작일
 	String tagDiv; //태그(태그1,태그2,태그3...)
 	String title; //글제목
+	String raidDivdCd; //레이드구분
+	String raidDivdNm; //레이드구분명
 	
 	public String getBoardId() {
 		return boardId;
@@ -128,4 +130,17 @@ public class raidBoardModel {
 	public void setTitle(String title) {
 		this.title = title;
 	}
+	public String getRaidDivdCd() {
+		return raidDivdCd;
+	}
+	public void setRaidDivdCd(String raidDivdCd) {
+		this.raidDivdCd = raidDivdCd;
+	}
+	public String getRaidDivdNm() {
+		return raidDivdNm;
+	}
+	public void setRaidDivdNm(String raidDivdNm) {
+		this.raidDivdNm = raidDivdNm;
+	}
+	
 }

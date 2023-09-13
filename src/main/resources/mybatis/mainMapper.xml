@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.demo.mapper.mainMapper">
-	<select id="selectWeekHotBoardList" resultType="raidBoardModel">
+	<select id="selectAllBoardList" resultType="raidBoardModel">
 		SELECT board_id AS boardId
 			 , content AS content
 			 , deadLine AS deadLine
@@ -20,6 +20,8 @@
 			 , start_date AS startDate
 			 , tag_div AS tagDiv
 			 , title AS title
+			 , raid_divd_cd AS raidDivdCd
+			 , raid_divd_nm AS raidDivdNm
 		  FROM PROJECTTEAMDB.raid_board_table
 	</select>
 </mapper>

@@ -9,4 +9,5 @@ import com.example.demo.model.raidBoardModel;
 @Mapper
 public interface mainMapper {
 	public ArrayList<raidBoardModel> selectWeekHotBoardList();
+	public ArrayList<raidBoardModel> selectAllBoardList();
 }
