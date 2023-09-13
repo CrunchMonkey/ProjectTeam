@@ -22,9 +22,9 @@ public class mainController {
 	@GetMapping(value = "/")
 	public String mainBoard(Model model) throws Exception {
 		JSONParser jsonParser = new JSONParser();
-		JSONObject jsonObj = new JSONObject();
+		JSONArray jsonArray = new JSONArray();
 		
-		ArrayList<raidBoardModel> weekHotBoardList = mainService.selectWeekHotBoardList();
+		ArrayList<raidBoardModel> weekHotBoardList = mainService.selectAllBoardList();
 		for(int i=0; i<weekHotBoardList.size(); i++) {
 			JSONObject tempObj = new JSONObject();
 			raidBoardModel tempModel = weekHotBoardList.get(i);
@@ -37,7 +37,7 @@ public class mainController {
 			tempObj.put("discordUse", tempModel.getDiscordUse()); //디스코드 사용유무
 			tempObj.put("dungeonDivCd", tempModel.getDungeonDivCd()); //던전 구분 code
 			tempObj.put("dungeonDivNm", tempModel.getDungeonDivNm()); //던전 구분명
-			tempObj.put("gateNum", tempModel);//관문
+			tempObj.put("gateNum", tempModel.getGateNum());//관문
 			tempObj.put("id", tempModel.getId()); //작성자 ID
 			tempObj.put("partyUrl", tempModel.getPartyUrl()); //오픈채티방 또는 구글폼
 			tempObj.put("personNum", tempModel.getPersonNum()); //모집인원
@@ -47,12 +47,13 @@ public class mainController {
 			tempObj.put("startDate", tempModel.getStartDate()); //시작일
 			tempObj.put("tagDiv", tempModel.getTagDiv()); //태그(태그1,태그2,태그3...)
 			tempObj.put("title", tempModel.getTitle()); //글제목
+			tempObj.put("raidDivdCd", tempModel.getRaidDivdCd()); //레이드 구분 코드
+			tempObj.put("raidDivdNm", tempModel.getRaidDivdNm()); //레이드 구분 명
+			
+			jsonArray.add(tempObj);
 		}
 		
-		model.addAttribute("name", (JSONObject)jsonParser.parse("{\"name\": \"식빵\"}"));
-		model.addAttribute("name2", (JSONArray)jsonParser.parse("[{\"name\": \"식빵\"},{\"name\": \"식빵\"}]"));
-		model.addAttribute("color", "red");
-		//model.addAttribute("testArray", testArray);
+		model.addAttribute("allBoardData", jsonArray);
 		String jsp = "main";
 		return jsp;
 	}
