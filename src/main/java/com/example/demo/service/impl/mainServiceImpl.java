@@ -18,13 +18,13 @@ public class mainServiceImpl implements mainService{
 	@Override
 	public ArrayList<raidBoardModel> selectWeekHotBoardList() {
 		// TODO Auto-generated method stub
-		return mainMapper.selectWeekHotBoardList();
+		return null;
 	}
 
 	@Override
 	public ArrayList<raidBoardModel> selectAllBoardList() {
 		// TODO Auto-generated method stub
-		return null;
+		return mainMapper.selectAllBoardList();
 	}
 
 	@Override

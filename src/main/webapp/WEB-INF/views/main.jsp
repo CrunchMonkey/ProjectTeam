@@ -212,27 +212,30 @@
 				</v-col>
 			</v-row>
 			<v-row class="mr-16 ml-16">
-				<v-col v-for="index in 5" :key="1"  cols="12" sm="12" md="6" lg="4" xl="3">
+			
+			
+			
+				<v-col v-for="data in allBoardData" :key=data.id  cols="12" sm="12" md="6" lg="4" xl="3">
 					<v-card class="rounded-card" variant="outlined">
 						<v-container>
 							<v-row no-gutters>
 								<v-col class="pa-1" style="height: 40px;">
 									<v-btn class="mr-1" rounded="xl" color="#282828" height="20px">
-										<p style="color: #FFFF9F">💀군단장</p>
+										<p style="color: #FFFF9F">💀{{data.raidDivdNm}}</p>
 									</v-btn>
 									<v-btn class="mr-1" rounded="xl" color="#282828" height="20px">
-										<p style="color: #FFFF9F">숙련</p>
+										<p style="color: #FFFF9F">{{data.proDivNm}}</p>
 									</v-btn>
 								</v-col>
 							</v-row>
 							<v-row no-gutters>
 								<v-col class="pa-1 text-h7" style="height: 40px;">
-									<p class="font-weight-medium" style="color: #a9a9a9">마감일 | 2023.09.09</p>
+									<p class="font-weight-medium" style="color: #a9a9a9">마감일 | {{data.deadLine}}</p>
 								</v-col>
 							</v-row>
 							<v-row no-gutters>
 								<v-col class="pa-1 text-h5" style="height: 80px;">
-									<p class="font-weight-black">제목입니다</p>
+									<p class="font-weight-black">{{data.title}}</p>
 								</v-col>
 							</v-row>
 							<v-row no-gutters>
@@ -257,7 +260,7 @@
 							</v-row>
 							<v-row no-gutters justify="space-between">
 								<v-col class="pa-1 text-h6" style="height: 40px;" cols="5">
-									<p>조와와</p>
+									<p>{{data.id}}</p>
 								</v-col>
 								<v-col class="pa-1 text-h6" style="height: 40px;" cols="5">
 									<p>👁12 🗨14</p>
@@ -266,7 +269,121 @@
 							</v-container>
 					</v-card>
 				</v-col>
+				
+				
+				
+				
 			</v-row>
+			<v-row justify="center">
+    <v-dialog
+      v-model="dialog"
+      persistent
+      width="1024"
+    >
+      <template v-slot:activator="{ props }">
+        <v-btn
+          color="primary"
+          v-bind="props"
+        >
+          Open Dialog
+        </v-btn>
+      </template>
+      <v-card>
+        <v-card-title>
+          <span class="text-h5">User Profile</span>
+        </v-card-title>
+        <v-card-text>
+          <v-container>
+            <v-row>
+              <v-col
+                cols="12"
+                sm="6"
+                md="4"
+              >
+                <v-text-field
+                  label="Legal first name*"
+                  required
+                ></v-text-field>
+              </v-col>
+              <v-col
+                cols="12"
+                sm="6"
+                md="4"
+              >
+                <v-text-field
+                  label="Legal middle name"
+                  hint="example of helper text only on focus"
+                ></v-text-field>
+              </v-col>
+              <v-col
+                cols="12"
+                sm="6"
+                md="4"
+              >
+                <v-text-field
+                  label="Legal last name*"
+                  hint="example of persistent helper text"
+                  persistent-hint
+                  required
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12">
+                <v-text-field
+                  label="Email*"
+                  required
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12">
+                <v-text-field
+                  label="Password*"
+                  type="password"
+                  required
+                ></v-text-field>
+              </v-col>
+              <v-col
+                cols="12"
+                sm="6"
+              >
+                <v-select
+                  :items="['0-17', '18-29', '30-54', '54+']"
+                  label="Age*"
+                  required
+                ></v-select>
+              </v-col>
+              <v-col
+                cols="12"
+                sm="6"
+              >
+                <v-autocomplete
+                  :items="['Skiing', 'Ice hockey', 'Soccer', 'Basketball', 'Hockey', 'Reading', 'Writing', 'Coding', 'Basejump']"
+                  label="Interests"
+                  multiple
+                ></v-autocomplete>
+              </v-col>
+            </v-row>
+          </v-container>
+          <small>*indicates required field</small>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            color="blue-darken-1"
+            variant="text"
+            @click="dialog = false"
+          >
+            Close
+          </v-btn>
+          <v-btn
+            color="blue-darken-1"
+            variant="text"
+            @click="dialog = false"
+          >
+            Save
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+  </v-row>
 			<v-row class="mr-16 ml-16">
 				<v-col cols="12">
 					1 2 3 4 5 ㅁ
@@ -291,9 +408,6 @@ const vuetify = createVuetify()
 
 const app = Vue.createApp({
 	created() {
-			var name = ${name};
-			var name2 = ${name2};
-			var color = JSON.parse('{"name": "Jack", "age": 30, "favoriteSport": "Football"}');
 		},
 		data () {
 			return {
@@ -319,6 +433,8 @@ const app = Vue.createApp({
     	                ],
     	                // Add more groups as needed
     	            ],
+    	            allBoardData : ${allBoardData},
+    	            dialog: false,
   
 				}
 			},
