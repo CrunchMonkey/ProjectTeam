@@ -19,7 +19,7 @@ public class mainController {
 	@Autowired
 	mainService mainService;
 	
-	@GetMapping(value = "/")
+	@GetMapping(value = "/temp")
 	public String mainBoard(Model model) throws Exception {
 		JSONParser jsonParser = new JSONParser();
 		JSONArray jsonArray = new JSONArray();
@@ -58,11 +58,10 @@ public class mainController {
 		return jsp;
 	}
 	
-	@RequestMapping(value = "/test")
-	@ResponseBody
+	@RequestMapping(value = "/")
 	public String test() throws Exception {
 		String jsp = "main";
-		return "Hello World";
+		return "index.html";
 	}
 }
 
