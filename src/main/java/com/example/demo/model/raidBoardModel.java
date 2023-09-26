@@ -17,10 +17,12 @@ public class raidBoardModel {
 	String proDivNm; //숙련도
 	String regDate; //작성일
 	String startDate; //시작일
-	String tagDiv; //태그(태그1,태그2,태그3...)
+	String tagDivFir; //태그1
+	String tagDivSec; //태그2
+	String tagDivThr; //태그3
 	String title; //글제목
-	String raidDivdCd; //레이드구분
-	String raidDivdNm; //레이드구분명
+	String raidDivCd; //레이드구분
+	String raidDivNm; //레이드구분명
 	
 	public String getBoardId() {
 		return boardId;
@@ -118,11 +120,23 @@ public class raidBoardModel {
 	public void setStartDate(String startDate) {
 		this.startDate = startDate;
 	}
-	public String getTagDiv() {
-		return tagDiv;
+	public String getTagDivFir() {
+		return tagDivFir;
 	}
-	public void setTagDiv(String tagDiv) {
-		this.tagDiv = tagDiv;
+	public void setTagDivFir(String tagDivFir) {
+		this.tagDivFir = tagDivFir;
+	}
+	public String getTagDivSec() {
+		return tagDivSec;
+	}
+	public void setTagDivSec(String tagDivSec) {
+		this.tagDivSec = tagDivSec;
+	}
+	public String getTagDivThr() {
+		return tagDivThr;
+	}
+	public void setTagDivThr(String tagDivThr) {
+		this.tagDivThr = tagDivThr;
 	}
 	public String getTitle() {
 		return title;
@@ -130,17 +144,16 @@ public class raidBoardModel {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getRaidDivdCd() {
-		return raidDivdCd;
+	public String getRaidDivCd() {
+		return raidDivCd;
 	}
-	public void setRaidDivdCd(String raidDivdCd) {
-		this.raidDivdCd = raidDivdCd;
+	public void setRaidDivCd(String raidDivCd) {
+		this.raidDivCd = raidDivCd;
 	}
-	public String getRaidDivdNm() {
-		return raidDivdNm;
+	public String getRaidDivNm() {
+		return raidDivNm;
 	}
-	public void setRaidDivdNm(String raidDivdNm) {
-		this.raidDivdNm = raidDivdNm;
+	public void setRaidDivNm(String raidDivNm) {
+		this.raidDivNm = raidDivNm;
 	}
-	
 }

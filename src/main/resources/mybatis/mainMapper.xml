@@ -2,51 +2,56 @@
 
 <mapper namespace="com.example.demo.mapper.mainMapper">
 	<select id="getRaidBoardList" resultType="raidBoardModel">
-		SELECT board_id AS boardId
-			 , content AS content
-			 , deadLine AS deadLine
-			 , defficult_cd AS defficultCd
-			 , defficult_Nm AS defficultNm
-			 , discord_use AS discordUse
-			 , dungeon_div_cd AS dungeonDiv
-			 , dungeon_div_nm AS dungeonDiv
-			 , gate_num AS geteNum
-			 , id AS id
-			 , party_url AS partyUrl
-			 , person_num AS personNum
-			 , pro_div_cd AS proDivCd
-			 , pro_div_nm AS proDivNm
-			 , reg_date AS regDate
-			 , start_date AS startDate
-			 , tag_div AS tagDiv
-			 , title AS title
-			 , raid_divd_cd AS raidDivdCd
-			 , raid_divd_nm AS raidDivdNm
+		SELECT BOARD_ID AS boardId
+			 , CONTENT AS content
+			 , DEADLINE AS deadLine
+			 , DEFFICULT_CD AS defficultCd
+			 , DEFFICULT_NM AS defficultNm
+			 , DISCORD_USE AS discordUse
+			 , DUNGEON_DIV_CD AS dungeonDiv
+			 , DUNGEON_DIV_NM AS dungeonDiv
+			 , GATE_NUM AS geteNum
+			 , ID AS id
+			 , PARTY_URL AS partyUrl
+			 , PERSON_NUM AS personNum
+			 , PRO_DIV_CD AS proDivCd
+			 , PRO_DIV_NM AS proDivNm
+			 , REG_DATE AS regDate
+			 , START_DATE AS startDate
+			 , TAG_DIV_FIR AS tagDivFir
+			 , TAG_DIV_SEC AS tagDivSEC
+			 , TAG_DIV_THR AS tagDivTHR
+			 , TITLE AS title
+			 , RAID_DIV_CD AS raidDivCd
+			 , RAID_DIV_NM AS raidDivNm
+			 , VIEW_COUNT AS viewCount
 		  FROM PROJECTTEAMDB.raid_board_table
 	</select>
 	
 	<select id="getRaidHotBoardList" resultType="raidBoardModel">
-		SELECT board_id AS boardId
-			 , content AS content
-			 , deadLine AS deadLine
-			 , defficult_cd AS defficultCd
-			 , defficult_Nm AS defficultNm
-			 , discord_use AS discordUse
-			 , dungeon_div_cd AS dungeonDiv
-			 , dungeon_div_nm AS dungeonDiv
-			 , gate_num AS geteNum
-			 , id AS id
-			 , party_url AS partyUrl
-			 , person_num AS personNum
-			 , pro_div_cd AS proDivCd
-			 , pro_div_nm AS proDivNm
-			 , reg_date AS regDate
-			 , start_date AS startDate
-			 , tag_div AS tagDiv
-			 , title AS title
-			 , raid_divd_cd AS raidDivdCd
-			 , raid_divd_nm AS raidDivdNm
-			 , view_count AS viewCount
+		SELECT BOARD_ID AS boardId
+			 , CONTENT AS content
+			 , DEADLINE AS deadLine
+			 , DEFFICULT_CD AS defficultCd
+			 , DEFFICULT_NM AS defficultNm
+			 , DISCORD_USE AS discordUse
+			 , DUNGEON_DIV_CD AS dungeonDiv
+			 , DUNGEON_DIV_NM AS dungeonDiv
+			 , GATE_NUM AS geteNum
+			 , ID AS id
+			 , PARTY_URL AS partyUrl
+			 , PERSON_NUM AS personNum
+			 , PRO_DIV_CD AS proDivCd
+			 , PRO_DIV_NM AS proDivNm
+			 , REG_DATE AS regDate
+			 , START_DATE AS startDate
+			 , TAG_DIV_FIR AS tagDivFir
+			 , TAG_DIV_SEC AS tagDivSEC
+			 , TAG_DIV_THR AS tagDivTHR
+			 , TITLE AS title
+			 , RAID_DIV_CD AS raidDivCd
+			 , RAID_DIV_NM AS raidDivNm
+			 , VIEW_COUNT AS viewCount
 		  FROM 
 		  (
 		  	SELECT *

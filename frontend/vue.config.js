@@ -4,7 +4,17 @@ module.exports = {
   outputDir: "../src/main/resources/static",
 
   devServer: {
-    proxy: 'http://localhost:8081'
+    proxy: {
+      // API 요청 경로 설정
+      '^/api': {
+        // 백엔드 서버 주소 설정
+        target: 'http://localhost:8081',
+        // 경로를 재작성할 때 사용 (옵션)
+        pathRewrite: {'^/api': ''},
+        // 프록시를 사용할 때 CORS 문제 해결을 위한 옵션 (옵션)
+        changeOrigin: true
+      }
+    }
   },
 
   pluginOptions: {

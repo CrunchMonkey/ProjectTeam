@@ -5,6 +5,7 @@ import org.json.simple.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -23,6 +24,7 @@ public class mainController {
 	
 	//모든 레이드 게시판 글
 	@GetMapping(value = "/getRaidBoardList")
+	@CrossOrigin(origins = "http://localhost:8080")
 	public JSONArray getRaidBoardList() throws Exception {
 		JSONParser jsonParser = new JSONParser();
 		JSONArray jsonArray = new JSONArray();
@@ -48,10 +50,12 @@ public class mainController {
 			tempObj.put("proDivNm", tempModel.getProDivNm()); //숙련도
 			tempObj.put("regDate", tempModel.getRegDate()); //작성일
 			tempObj.put("startDate", tempModel.getStartDate()); //시작일
-			tempObj.put("tagDiv", tempModel.getTagDiv()); //태그(태그1,태그2,태그3...)
+			tempObj.put("tagDivFir", tempModel.getTagDivFir()); //태그(태그1)
+			tempObj.put("tagDivSec", tempModel.getTagDivSec()); //태그(태그2)
+			tempObj.put("tagDivThr", tempModel.getTagDivThr()); //태그(태그3)
 			tempObj.put("title", tempModel.getTitle()); //글제목
-			tempObj.put("raidDivdCd", tempModel.getRaidDivdCd()); //레이드 구분 코드
-			tempObj.put("raidDivdNm", tempModel.getRaidDivdNm()); //레이드 구분 명
+			tempObj.put("raidDivCd", tempModel.getRaidDivCd()); //레이드 구분 코드
+			tempObj.put("raidDivNm", tempModel.getRaidDivNm()); //레이드 구분 명
 			
 			jsonArray.add(tempObj);
 		}
@@ -84,10 +88,12 @@ public class mainController {
 			tempObj.put("proDivNm", tempModel.getProDivNm()); //숙련도
 			tempObj.put("regDate", tempModel.getRegDate()); //작성일
 			tempObj.put("startDate", tempModel.getStartDate()); //시작일
-			tempObj.put("tagDiv", tempModel.getTagDiv()); //태그(태그1,태그2,태그3...)
+			tempObj.put("tagDivFir", tempModel.getTagDivFir()); //태그(태그1,태그2,태그3...)
+			tempObj.put("tagDivSec", tempModel.getTagDivSec()); //태그(태그1,태그2,태그3...)
+			tempObj.put("tagDivThr", tempModel.getTagDivThr()); //태그(태그1,태그2,태그3...)
 			tempObj.put("title", tempModel.getTitle()); //글제목
-			tempObj.put("raidDivdCd", tempModel.getRaidDivdCd()); //레이드 구분 코드
-			tempObj.put("raidDivdNm", tempModel.getRaidDivdNm()); //레이드 구분 명
+			tempObj.put("raidDivdCd", tempModel.getRaidDivCd()); //레이드 구분 코드
+			tempObj.put("raidDivdNm", tempModel.getRaidDivNm()); //레이드 구분 명
 			
 			jsonArray.add(tempObj);
 		}
