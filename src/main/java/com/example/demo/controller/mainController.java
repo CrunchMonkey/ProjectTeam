@@ -24,10 +24,10 @@ public class mainController {
 	
 	//모든 레이드 게시판 글
 	@GetMapping(value = "/getRaidBoardList")
-	@CrossOrigin(origins = "http://localhost:8080")
 	public JSONArray getRaidBoardList() throws Exception {
 		JSONParser jsonParser = new JSONParser();
 		JSONArray jsonArray = new JSONArray();
+		JSONArray resultArray = new JSONArray();
 		
 		ArrayList<raidBoardModel> boardList = mainService.getRaidBoardList();
 		for(int i=0; i<boardList.size(); i++) {
@@ -58,14 +58,20 @@ public class mainController {
 			tempObj.put("raidDivNm", tempModel.getRaidDivNm()); //레이드 구분 명
 			
 			jsonArray.add(tempObj);
+			
+			if(i == boardList.size() - 1 || jsonArray.size() == 4) {
+				resultArray.add(jsonArray);
+				jsonArray = new JSONArray();
+			}
 		}
-		return jsonArray;
+		return resultArray;
 	}
 	
 	@GetMapping(value = "/getRaidHotBoardList")
 	public JSONArray getRaidHotBoardList() throws Exception {
 		JSONParser jsonParser = new JSONParser();
 		JSONArray jsonArray = new JSONArray();
+		JSONArray resultArray = new JSONArray();
 		
 		ArrayList<raidBoardModel> boardHotList = mainService.getRaidHotBoardList();
 		for(int i=0; i<boardHotList.size(); i++) {
@@ -96,8 +102,13 @@ public class mainController {
 			tempObj.put("raidDivdNm", tempModel.getRaidDivNm()); //레이드 구분 명
 			
 			jsonArray.add(tempObj);
+			
+			if(i == boardHotList.size() - 1 || jsonArray.size() == 4) {
+				resultArray.add(jsonArray);
+				jsonArray = new JSONArray();
+			}
 		}
-		return jsonArray;
+		return resultArray;
 	}
 }
 

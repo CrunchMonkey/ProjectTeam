@@ -55,28 +55,9 @@
 </template>
 <script>
 var abc; //eslint-disable-line no-unused-vars
-import axios from 'axios';
 
 export default {
   name: 'menuBar',
-  created() {
-    // REST API 엔드포인트 URL
-    const apiUrl = '/api/getRaidHotBoardList';
-
-    // Axios를 사용하여 데이터 가져오기
-    axios.get(apiUrl)
-      .then((response) => {
-        // 성공적으로 데이터를 받아온 경우
-		abc = response.data;
-        this.posts = response.data;
-		console.error('가져온 데이터', response.data);
-		
-      })
-      .catch((error) => {
-        // 오류가 발생한 경우
-        console.error('데이터를 가져오는 중 오류가 발생했습니다:', error);
-      });
-  },
   data: () => ({
 	dialog: false,
   }),

@@ -2,9 +2,9 @@
     <v-row class="mr-16 ml-16">
 		<v-col>
 			<v-carousel hide-delimiters="true" show-arrows="hover" height="auto">
-				<v-carousel-item>
+				<v-carousel-item v-for="(item, i) in list" :key="i">
 					<v-row>
-						<v-col cols="12" sm="12" md="6" lg="4" xl="3">
+						<v-col v-for="(i, r) in item" :key="r" cols="12" sm="12" md="6" lg="4" xl="3">
 							<v-card class="rounded-card" variant="outlined">
 								<v-container>
 									<v-row no-gutters>
@@ -45,11 +45,30 @@
 	</v-row>
 </template>
 <script>
-
+import axios from 'axios';
+var abc; //eslint-disable-line no-unused-vars
 export default {
   name: 'hotRowCar',
+  created() {
+    // REST API 엔드포인트 URL
+    const apiUrl = '/api/getRaidHotBoardList';
 
+    // Axios를 사용하여 데이터 가져오기
+    axios.get(apiUrl)
+      .then((response) => {
+		this.list = response.data;
+		abc = response.data;
+        // 성공적으로 데이터를 받아온 경우
+		//console.log('콘솔로그', this.list[0]);
+		
+      })
+      .catch((error) => {
+        // 오류가 발생한 경우
+        console.error('데이터를 가져오는 중 오류가 발생했습니다:', error);
+      });
+  },
   data: () => ({
+	list: [[{"id" : "123"}]],
   }),
 }
 </script>
