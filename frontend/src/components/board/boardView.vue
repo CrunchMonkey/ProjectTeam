@@ -56,13 +56,72 @@
       </v-row>
       <v-row class="mr-16 ml-16">
 				<v-col>
-					<v-toolbar color="white">
-				      	<v-toolbar-title><h3>[웹 프로젝트] 개발 토이프로젝트 [ 프론트엔드, 디자이너 ]팀원을 모집합니다.</h3></v-toolbar-title>
-				    </v-toolbar>
+          <h2>[웹 프로젝트] 개발 토이프로젝트 [ 프론트엔드, 디자이너 ]팀원을 모집합니다.</h2>
 				</v-col>
         
 			</v-row>
+      <v-row class="mr-16 ml-16">
+				<v-col>
+					<h3>작성 | 0000-00-00</h3>
+				</v-col>
+			</v-row>
       <v-divider></v-divider>
+      <v-row class="mr-16 ml-16">
+				<v-col>
+					<h3>모집구분</h3>
+				</v-col>
+        <v-col>
+					<h3>OOOO</h3>
+				</v-col>
+        <v-col>
+					<h3>진행방식</h3>
+				</v-col>
+        <v-col>
+					<h3>온/오프라인</h3>
+				</v-col>
+			</v-row>
+      <v-row class="mr-16 ml-16">
+				<v-col>
+					<h3>모집인원</h3>
+				</v-col>
+        <v-col>
+					<h3>O명</h3>
+				</v-col>
+        <v-col>
+					<h3>시작예정</h3>
+				</v-col>
+        <v-col>
+					<h3>0000-00-00</h3>
+				</v-col>
+			</v-row>
+      <v-row class="mr-16 ml-16">
+				<v-col>
+					<h3>연락방법</h3>
+				</v-col>
+        <v-col>
+					<h3>링크</h3>
+				</v-col>
+        <v-col>
+					<h3>예상기간</h3>
+				</v-col>
+        <v-col>
+					<h3>O개월</h3>
+				</v-col>
+			</v-row>
+      <v-row class="mr-16 ml-16">
+				<v-col>
+					<h3>모집분야</h3>
+				</v-col>
+        <v-col>
+					<h3>OOO</h3>
+				</v-col>
+        <v-col>
+					<h3>사용언어</h3>
+				</v-col>
+        <v-col>
+					<h3>OOO</h3>
+				</v-col>
+			</v-row>
 		</v-container>
 	</v-app>
 

@@ -23,6 +23,7 @@ public class raidBoardModel {
 	String title; //글제목
 	String raidDivCd; //레이드구분
 	String raidDivNm; //레이드구분명
+	String viewCount;
 	
 	public String getBoardId() {
 		return boardId;
@@ -155,5 +156,11 @@ public class raidBoardModel {
 	}
 	public void setRaidDivNm(String raidDivNm) {
 		this.raidDivNm = raidDivNm;
+	}
+	public String getViewCount() {
+		return viewCount;
+	}
+	public void setViewCount(String viewCount) {
+		this.viewCount = viewCount;
 	}
 }

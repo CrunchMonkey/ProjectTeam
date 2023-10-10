@@ -56,6 +56,7 @@ public class mainController {
 			tempObj.put("title", tempModel.getTitle()); //글제목
 			tempObj.put("raidDivCd", tempModel.getRaidDivCd()); //레이드 구분 코드
 			tempObj.put("raidDivNm", tempModel.getRaidDivNm()); //레이드 구분 명
+			tempObj.put("viewCount", tempModel.getViewCount()); //조회수
 			
 			jsonArray.add(tempObj);
 			
@@ -100,6 +101,7 @@ public class mainController {
 			tempObj.put("title", tempModel.getTitle()); //글제목
 			tempObj.put("raidDivdCd", tempModel.getRaidDivCd()); //레이드 구분 코드
 			tempObj.put("raidDivdNm", tempModel.getRaidDivNm()); //레이드 구분 명
+			tempObj.put("viewCount", tempModel.getViewCount()); //조회수
 			
 			jsonArray.add(tempObj);
 			

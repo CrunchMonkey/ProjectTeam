@@ -2,37 +2,37 @@
     <v-row class="mr-16 ml-16">
 		<v-col>
 			<v-carousel hide-delimiters="true" show-arrows="hover" height="auto">
-				<v-carousel-item v-for="(item, i) in list" :key="i">
+				<v-carousel-item v-for="(firstItem, i) in list" :key="i">
 					<v-row>
-						<v-col v-for="(i, r) in item" :key="r" cols="12" sm="12" md="6" lg="4" xl="3">
+						<v-col v-for="(secondItem, r) in firstItem" :key="r" cols="12" sm="12" md="6" lg="4" xl="3">
 							<v-card class="rounded-card" variant="outlined">
 								<v-container>
 									<v-row no-gutters>
 										<v-col class="pa-1" style="height: 40px;">
 											<v-btn class="mr-1" rounded="xl" color="#282828" height="20px">
-												<p style="color: #FFFF9F">💀군단장</p>
+												<p style="color: #FFFF9F">💀{{secondItem.raidDivdNm}}</p>
 											</v-btn>
 											<v-btn class="mr-1" rounded="xl" color="#282828" height="20px">
-												<p style="color: #FFFF9F">숙련</p>
+												<p style="color: #FFFF9F">{{secondItem.proDivNm}}</p>
 											</v-btn>
 										</v-col>
 									</v-row>
 									<v-row no-gutters>
 										<v-col class="pa-1 text-h7" style="height: 40px;">
-											<p class="font-weight-medium" style="color: #a9a9a9">마감일 | 2023.09.09</p>
+											<p class="font-weight-medium" style="color: #a9a9a9">마감일 | {{secondItem.deadLine}}</p>
 										</v-col>
 									</v-row>
 									<v-row no-gutters>
 										<v-col class="pa-1 text-h5" style="height: 80px;">
-											<p class="font-weight-black">제목입니다</p>
+											<p class="font-weight-black">{{secondItem.title}}</p>
 										</v-col>
 									</v-row>
 									<v-row no-gutters justify="space-between">
 										<v-col class="pa-1 text-h6" style="height: 40px;" cols="5">
-											<p>조와와</p>
+											<p>{{secondItem.id}}</p>
 										</v-col>
 										<v-col class="pa-1 text-h6" style="height: 40px;" cols="5">
-											<p>👁12 🗨14</p>
+											<p>👁{{secondItem.viewCount}} 🗨14</p>
 										</v-col>
 									</v-row>
 									</v-container>
