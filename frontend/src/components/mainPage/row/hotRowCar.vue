@@ -1,5 +1,5 @@
 <template>
-    <v-row class="mr-16 ml-16">
+    <v-row class="">
 		<v-col>
 			<v-carousel hide-delimiters="true" show-arrows="hover" height="auto">
 				<v-carousel-item v-for="(firstItem, i) in list" :key="i">
@@ -8,7 +8,7 @@
 							<v-card class="rounded-card" variant="outlined">
 								<v-container>
 									<v-row no-gutters>
-										<v-col class="pa-1" style="height: 40px;">
+										<v-col style="height: 40px;">
 											<v-btn class="mr-1" rounded="xl" color="#282828" height="20px">
 												<p style="color: #FFFF9F">💀{{secondItem.raidDivdNm}}</p>
 											</v-btn>
@@ -18,20 +18,20 @@
 										</v-col>
 									</v-row>
 									<v-row no-gutters>
-										<v-col class="pa-1 text-h7" style="height: 40px;">
+										<v-col class="text-h7" style="height: 40px;">
 											<p class="font-weight-medium" style="color: #a9a9a9">마감일 | {{secondItem.deadLine}}</p>
 										</v-col>
 									</v-row>
 									<v-row no-gutters>
-										<v-col class="pa-1 text-h5" style="height: 80px;">
+										<v-col class="text-h5" style="height: 80px;">
 											<p class="font-weight-black">{{secondItem.title}}</p>
 										</v-col>
 									</v-row>
-									<v-row no-gutters justify="space-between">
-										<v-col class="pa-1 text-h6" style="height: 40px;" cols="5">
+									<v-row no-gutters>
+										<v-col class="text-h6" style="height: 40px;" cols="6">
 											<p>{{secondItem.id}}</p>
 										</v-col>
-										<v-col class="pa-1 text-h6" style="height: 40px;" cols="5">
+										<v-col class="text-h6" style="height: 40px;" cols="6">
 											<p>👁{{secondItem.viewCount}} 🗨14</p>
 										</v-col>
 									</v-row>
@@ -46,7 +46,7 @@
 </template>
 <script>
 import axios from 'axios';
-var abc; //eslint-disable-line no-unused-vars
+
 export default {
   name: 'hotRowCar',
   created() {
@@ -57,7 +57,6 @@ export default {
     axios.get(apiUrl)
       .then((response) => {
 		this.list = response.data;
-		abc = response.data;
         // 성공적으로 데이터를 받아온 경우
 		//console.log('콘솔로그', this.list[0]);
 		
@@ -68,7 +67,7 @@ export default {
       });
   },
   data: () => ({
-	list: [[{"id" : "123"}]],
+	list: null,
   }),
 }
 </script>

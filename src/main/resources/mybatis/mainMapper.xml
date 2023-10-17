@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.demo.mapper.mainMapper">
-	<select id="getRaidBoardList" resultType="raidBoardModel">
+	<select id="getRaidBoardList" parameterType="raidBoardModel" resultType="raidBoardModel">
 		SELECT BOARD_ID AS boardId
 			 , CONTENT AS content
 			 , DEADLINE AS deadLine
@@ -26,6 +26,12 @@
 			 , RAID_DIV_NM AS raidDivNm
 			 , VIEW_COUNT AS viewCount
 		  FROM PROJECTTEAMDB.raid_board_table
+		 WHERE 1=1
+		 <if test='pagingNum != "1"'>
+		   AND TAG_DIV_SEC=#{pagingNum};
+		 </if>
+		   
+		 
 	</select>
 	
 	<select id="getRaidHotBoardList" resultType="raidBoardModel">

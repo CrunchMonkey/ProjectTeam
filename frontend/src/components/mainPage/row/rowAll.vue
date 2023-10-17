@@ -1,6 +1,7 @@
 <template>
-    <v-row class="mr-16 ml-16">
-		<v-col v-for="data in allBoardData" :key=data.id  cols="12" sm="12" md="6" lg="4" xl="3">
+    <v-row class="">
+		{{list}}
+	+	<v-col v-for="data in allBoardData" :key=data.id  cols="12" sm="12" md="6" lg="4" xl="3">
 			<v-card class="rounded-card" variant="outlined">
 				<v-container>
 					<v-row no-gutters>
@@ -55,13 +56,51 @@
 			</v-card>
 		</v-col>
 	</v-row>
+	<v-row class="">
+		<v-col cols="12">
+			footer부분
+		</v-col>
+	</v-row>
+	<button v-on:click="click('안녕하세요')">버튼테스트</button>
 </template>
 <script>
+import axios from 'axios';
 
 export default {
   name: 'rowAll',
+  created() {
+    // REST API 엔드포인트 URL
+    const apiUrl = '/api/getRaidBoardList';
 
+    // Axios를 사용하여 데이터 가져오기
+    axios.get(apiUrl)
+      .then((response) => {
+		this.list = response.data;
+
+        // 성공적으로 데이터를 받아온 경우
+		//console.log('콘솔로그', this.list[0]);
+		
+      })
+      .catch((error) => {
+        // 오류가 발생한 경우
+        console.error('데이터를 가져오는 중 오류가 발생했습니다:', error);
+      });
+  },
   data: () => ({
+	list:null,
   }),
+  methods: {
+	click: function(message) {
+		alert(message);
+		axios.post('/api/test', "나는호날두가좋아")
+			.then(response => {
+				console.log('백엔드 응답:', response.data);
+			})
+			.catch(error => {
+				console.error('에러:', error);
+			});
+		
+	}
+  },
 }
 </script>

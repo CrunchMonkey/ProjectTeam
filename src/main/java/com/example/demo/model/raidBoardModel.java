@@ -24,6 +24,7 @@ public class raidBoardModel {
 	String raidDivCd; //레이드구분
 	String raidDivNm; //레이드구분명
 	String viewCount;
+	String pagingNum; //페이지 숫자
 	
 	public String getBoardId() {
 		return boardId;
@@ -162,5 +163,11 @@ public class raidBoardModel {
 	}
 	public void setViewCount(String viewCount) {
 		this.viewCount = viewCount;
+	}
+	public String getPagingNum() {
+		return pagingNum;
+	}
+	public void setPagingNum(String pagingNum) {
+		this.pagingNum = pagingNum;
 	}
 }

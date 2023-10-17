@@ -8,6 +8,6 @@ import com.example.demo.model.raidBoardModel;
 
 @Mapper
 public interface mainMapper {
-	public ArrayList<raidBoardModel> getRaidBoardList();
-	public ArrayList<raidBoardModel> getRaidHotBoardList();
+	public ArrayList<raidBoardModel> getRaidBoardList(raidBoardModel model);
+	public ArrayList<raidBoardModel> getRaidHotBoardList(raidBoardModel model);
 }

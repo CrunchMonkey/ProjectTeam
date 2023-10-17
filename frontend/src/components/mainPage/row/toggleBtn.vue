@@ -1,5 +1,5 @@
 <template>
-    <v-row class="mr-16 ml-16">
+    <v-row class="">
 		<v-col cols="12" lg="12">
 			<v-btn-toggle v-model="toggle_exclusive">
 				<v-btn class="text-h5" variant="text">전체</v-btn>

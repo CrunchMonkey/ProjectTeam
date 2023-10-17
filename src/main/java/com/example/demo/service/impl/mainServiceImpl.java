@@ -16,15 +16,15 @@ public class mainServiceImpl implements mainService{
 	mainMapper mainMapper;
 
 	@Override
-	public ArrayList<raidBoardModel> getRaidBoardList() {
+	public ArrayList<raidBoardModel> getRaidBoardList(raidBoardModel model) {
 		// TODO Auto-generated method stub
-		return mainMapper.getRaidBoardList();
+		return mainMapper.getRaidBoardList(model);
 	}
 	
 	@Override
-	public ArrayList<raidBoardModel> getRaidHotBoardList() {
+	public ArrayList<raidBoardModel> getRaidHotBoardList(raidBoardModel model) {
 		// TODO Auto-generated method stub
-		return mainMapper.getRaidHotBoardList();
+		return mainMapper.getRaidHotBoardList(model);
 	}
 
 	@Override

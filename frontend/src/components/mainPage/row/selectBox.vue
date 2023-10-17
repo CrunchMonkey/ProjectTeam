@@ -1,5 +1,5 @@
 <template>
-    <v-row class="mr-16 ml-16">
+    <v-row class="">
 		<v-col cols="2">
 			<v-select label="레이드 종류" :items=test></v-select>
 		</v-col>

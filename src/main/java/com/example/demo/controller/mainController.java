@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,12 +26,14 @@ public class mainController {
 	
 	//모든 레이드 게시판 글
 	@GetMapping(value = "/getRaidBoardList")
-	public JSONArray getRaidBoardList() throws Exception {
+	public JSONArray getRaidBoardList(raidBoardModel vueModel) throws Exception {
 		JSONParser jsonParser = new JSONParser();
 		JSONArray jsonArray = new JSONArray();
 		JSONArray resultArray = new JSONArray();
 		
-		ArrayList<raidBoardModel> boardList = mainService.getRaidBoardList();
+		raidBoardModel model = new raidBoardModel();
+		model.setPagingNum("1");
+		ArrayList<raidBoardModel> boardList = mainService.getRaidBoardList(model);
 		for(int i=0; i<boardList.size(); i++) {
 			JSONObject tempObj = new JSONObject();
 			raidBoardModel tempModel = boardList.get(i);
@@ -73,8 +77,10 @@ public class mainController {
 		JSONParser jsonParser = new JSONParser();
 		JSONArray jsonArray = new JSONArray();
 		JSONArray resultArray = new JSONArray();
+		raidBoardModel model = new raidBoardModel();
+		model.setPagingNum("1");
 		
-		ArrayList<raidBoardModel> boardHotList = mainService.getRaidHotBoardList();
+		ArrayList<raidBoardModel> boardHotList = mainService.getRaidHotBoardList(model);
 		for(int i=0; i<boardHotList.size(); i++) {
 			JSONObject tempObj = new JSONObject();
 			raidBoardModel tempModel = boardHotList.get(i);
@@ -111,6 +117,11 @@ public class mainController {
 			}
 		}
 		return resultArray;
+	}
+	
+	@PostMapping(value = "/test")
+	public void test(@RequestBody String str) {
+		System.out.println(str);
 	}
 }
 
