@@ -1,7 +1,7 @@
 <template>
     <v-row class="">
-		{{list}}
-	+	<v-col v-for="data in allBoardData" :key=data.id  cols="12" sm="12" md="6" lg="4" xl="3">
+	+	<v-col v-for="data in list" :key=data.id  cols="12" sm="12" md="6" lg="4" xl="3">
+		{{ data}}
 			<v-card class="rounded-card" variant="outlined">
 				<v-container>
 					<v-row no-gutters>

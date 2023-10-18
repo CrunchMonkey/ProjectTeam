@@ -28,7 +28,6 @@ public class mainController {
 	@GetMapping(value = "/getRaidBoardList")
 	public JSONArray getRaidBoardList(raidBoardModel vueModel) throws Exception {
 		JSONParser jsonParser = new JSONParser();
-		JSONArray jsonArray = new JSONArray();
 		JSONArray resultArray = new JSONArray();
 		
 		raidBoardModel model = new raidBoardModel();
@@ -62,12 +61,7 @@ public class mainController {
 			tempObj.put("raidDivNm", tempModel.getRaidDivNm()); //레이드 구분 명
 			tempObj.put("viewCount", tempModel.getViewCount()); //조회수
 			
-			jsonArray.add(tempObj);
-			
-			if(i == boardList.size() - 1 || jsonArray.size() == 4) {
-				resultArray.add(jsonArray);
-				jsonArray = new JSONArray();
-			}
+			resultArray.add(tempObj);
 		}
 		return resultArray;
 	}
