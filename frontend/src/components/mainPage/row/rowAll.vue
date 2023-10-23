@@ -57,15 +57,23 @@
 		</v-col>
 	</v-row>
 	<v-row class="">
-		<v-col cols="12">
-			footer부분
-		</v-col>
+      <v-col cols="12">
+        <div class="text-center">
+          <v-container>
+            <v-row justify="center">
+              <v-col cols="8">
+                <v-container class="max-width">
+                  <v-pagination v-on:click="click('안녕하세요')" v-model="page" mclass="my-4" :length="15"></v-pagination>
+                </v-container>
+              </v-col>
+            </v-row>
+          </v-container>
+        </div>
+      </v-col>
 	</v-row>
-	<button v-on:click="click('안녕하세요')">버튼테스트</button>
 </template>
 <script>
 import axios from 'axios';
-
 export default {
   name: 'rowAll',
   created() {
@@ -88,11 +96,13 @@ export default {
   },
   data: () => ({
 	list:null,
+	page:null,
   }),
   methods: {
 	click: function(message) {
 		alert(message);
-		axios.post('/api/test', "나는호날두가좋아")
+		alert(this.page);
+		axios.post('/api/test', {id : "id값이"}, {headers: {'Content-Type': 'application/json',}})
 			.then(response => {
 				console.log('백엔드 응답:', response.data);
 			})

@@ -14,7 +14,7 @@
 			<hotRowCar></hotRowCar>
 			<selectBox></selectBox>
 			<rowAll></rowAll>
-			<pagingRow></pagingRow>
+			<footerRow></footerRow>
 		</v-container>
 	</v-app>
 </template>
@@ -26,7 +26,7 @@ import menuBar from './row/menuBar.vue'
 import rowAll from './row/rowAll.vue'
 import selectBox from './row/selectBox.vue'
 import toggleBtn from './row/toggleBtn.vue'
-import pagingRow from './row/pagingRow.vue'
+import footerRow from './row/footerRow.vue'
 
 export default {
   name: 'mainContainer',
@@ -37,7 +37,7 @@ export default {
 	rowAll,
 	selectBox,
 	toggleBtn,
-  pagingRow,
+	footerRow
   },
   data: () => ({
 	dialog: false,

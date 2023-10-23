@@ -25,14 +25,20 @@ public class mainController {
 	mainService mainService;
 	
 	//모든 레이드 게시판 글
-	@GetMapping(value = "/getRaidBoardList")
-	public JSONArray getRaidBoardList(raidBoardModel vueModel) throws Exception {
+	@RequestMapping(value = "/getRaidBoardList")
+	public JSONArray getRaidBoardList(@RequestBody raidBoardModel vueModel) throws Exception {
 		JSONParser jsonParser = new JSONParser();
 		JSONArray resultArray = new JSONArray();
 		
-		raidBoardModel model = new raidBoardModel();
-		model.setPagingNum("1");
-		ArrayList<raidBoardModel> boardList = mainService.getRaidBoardList(model);
+		if(Integer.toString(vueModel.getPagingNum()).equals("")) {
+			vueModel.setStartPagingNum(1);
+			vueModel.setStartPagingNum(10);
+		} else {
+			vueModel.setStartPagingNum(vueModel.getPagingNum() * 10 - 9);
+			vueModel.setStartPagingNum(vueModel.getPagingNum() * 10);
+		}
+		
+		ArrayList<raidBoardModel> boardList = mainService.getRaidBoardList(vueModel);
 		for(int i=0; i<boardList.size(); i++) {
 			JSONObject tempObj = new JSONObject();
 			raidBoardModel tempModel = boardList.get(i);
@@ -66,7 +72,7 @@ public class mainController {
 		return resultArray;
 	}
 	
-	@GetMapping(value = "/getRaidHotBoardList")
+	@RequestMapping(value = "/getRaidHotBoardList")
 	public JSONArray getRaidHotBoardList() throws Exception {
 		JSONParser jsonParser = new JSONParser();
 		JSONArray jsonArray = new JSONArray();
@@ -113,9 +119,9 @@ public class mainController {
 		return resultArray;
 	}
 	
-	@PostMapping(value = "/test")
-	public void test(@RequestBody String str) {
-		System.out.println(str);
+	@RequestMapping(value = "/test")
+	public void test(@RequestBody raidBoardModel vueModel) {
+		System.out.println(vueModel.getId());
 	}
 }
 

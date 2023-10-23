@@ -1,30 +1,32 @@
 package com.example.demo.model;
 
 public class raidBoardModel {
-	String boardId; //게시글 ID
-	String content; //게시글 내용
-	String deadLine; //마감일
-	String defficultCd; //난이도 code
-	String defficultNm; //난이도
-	String discordUse; //디스코드 사용유무
-	String dungeonDivCd; //던전 구분 code
-	String dungeonDivNm; //던전 구분명
-	String gateNum;//관문
-	String id; //작성자 ID
-	String partyUrl; //오픈채티방 또는 구글폼
-	String personNum; //모집인원
-	String proDivCd; //숙련도 code
-	String proDivNm; //숙련도
-	String regDate; //작성일
-	String startDate; //시작일
-	String tagDivFir; //태그1
-	String tagDivSec; //태그2
-	String tagDivThr; //태그3
-	String title; //글제목
-	String raidDivCd; //레이드구분
-	String raidDivNm; //레이드구분명
-	String viewCount;
-	String pagingNum; //페이지 숫자
+	private String boardId; //게시글 ID
+	private String content; //게시글 내용
+	private String deadLine; //마감일
+	private String defficultCd; //난이도 code
+	private String defficultNm; //난이도
+	private String discordUse; //디스코드 사용유무
+	private String dungeonDivCd; //던전 구분 code
+	private String dungeonDivNm; //던전 구분명
+	private String gateNum;//관문
+	private String id; //작성자 ID
+	private String partyUrl; //오픈채티방 또는 구글폼
+	private String personNum; //모집인원
+	private String proDivCd; //숙련도 code
+	private String proDivNm; //숙련도
+	private String regDate; //작성일
+	private String startDate; //시작일
+	private String tagDivFir; //태그1
+	private String tagDivSec; //태그2
+	private String tagDivThr; //태그3
+	private String title; //글제목
+	private String raidDivCd; //레이드구분
+	private String raidDivNm; //레이드구분명
+	private String viewCount;
+	private int pagingNum; //페이지 숫자
+	private int startPagingNum;
+	private int endPagingNum;
 	
 	public String getBoardId() {
 		return boardId;
@@ -164,10 +166,22 @@ public class raidBoardModel {
 	public void setViewCount(String viewCount) {
 		this.viewCount = viewCount;
 	}
-	public String getPagingNum() {
+	public int getPagingNum() {
 		return pagingNum;
 	}
-	public void setPagingNum(String pagingNum) {
+	public void setPagingNum(int pagingNum) {
 		this.pagingNum = pagingNum;
+	}
+	public int getStartPagingNum() {
+		return startPagingNum;
+	}
+	public void setStartPagingNum(int startPagingNum) {
+		this.startPagingNum = startPagingNum;
+	}
+	public int getEndPagingNum() {
+		return endPagingNum;
+	}
+	public void setEndPagingNum(int endPagingNum) {
+		this.endPagingNum = endPagingNum;
 	}
 }
