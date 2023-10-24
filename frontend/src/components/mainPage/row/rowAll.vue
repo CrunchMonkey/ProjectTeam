@@ -1,7 +1,6 @@
 <template>
     <v-row class="">
-	+	<v-col v-for="data in list" :key=data.id  cols="12" sm="12" md="6" lg="4" xl="3">
-		{{ data}}
+		<v-col v-for="data in list" :key=data.id  cols="12" sm="12" md="6" lg="4" xl="3">
 			<v-card class="rounded-card" variant="outlined">
 				<v-container>
 					<v-row no-gutters>
@@ -78,10 +77,9 @@ export default {
   name: 'rowAll',
   created() {
     // REST API 엔드포인트 URL
-    const apiUrl = '/api/getRaidBoardList';
 
     // Axios를 사용하여 데이터 가져오기
-    axios.get(apiUrl)
+    axios.post('/api/getRaidBoardList', {pagingNum : "0"}, {headers: {'Content-Type': 'application/json',}})
       .then((response) => {
 		this.list = response.data;
 
@@ -99,11 +97,10 @@ export default {
 	page:null,
   }),
   methods: {
-	click: function(message) {
-		alert(message);
-		alert(this.page);
-		axios.post('/api/test', {id : "id값이"}, {headers: {'Content-Type': 'application/json',}})
+	click: function() {
+		axios.post('/api/getRaidBoardList', {pagingNum : this.page.toString()}, {headers: {'Content-Type': 'application/json',}})
 			.then(response => {
+				this.list = response.data;
 				console.log('백엔드 응답:', response.data);
 			})
 			.catch(error => {

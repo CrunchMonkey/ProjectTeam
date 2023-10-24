@@ -24,9 +24,9 @@ public class raidBoardModel {
 	private String raidDivCd; //레이드구분
 	private String raidDivNm; //레이드구분명
 	private String viewCount;
-	private int pagingNum; //페이지 숫자
-	private int startPagingNum;
-	private int endPagingNum;
+	private String pagingNum; //페이지 숫자
+	private String startPagingNum;
+	private String endPagingNum;
 	
 	public String getBoardId() {
 		return boardId;
@@ -166,22 +166,22 @@ public class raidBoardModel {
 	public void setViewCount(String viewCount) {
 		this.viewCount = viewCount;
 	}
-	public int getPagingNum() {
+	public String getPagingNum() {
 		return pagingNum;
 	}
-	public void setPagingNum(int pagingNum) {
+	public void setPagingNum(String pagingNum) {
 		this.pagingNum = pagingNum;
 	}
-	public int getStartPagingNum() {
+	public String getStartPagingNum() {
 		return startPagingNum;
 	}
-	public void setStartPagingNum(int startPagingNum) {
+	public void setStartPagingNum(String startPagingNum) {
 		this.startPagingNum = startPagingNum;
 	}
-	public int getEndPagingNum() {
+	public String getEndPagingNum() {
 		return endPagingNum;
 	}
-	public void setEndPagingNum(int endPagingNum) {
+	public void setEndPagingNum(String endPagingNum) {
 		this.endPagingNum = endPagingNum;
 	}
 }

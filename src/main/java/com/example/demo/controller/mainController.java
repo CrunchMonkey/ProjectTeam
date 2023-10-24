@@ -25,17 +25,20 @@ public class mainController {
 	mainService mainService;
 	
 	//모든 레이드 게시판 글
+	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/getRaidBoardList")
 	public JSONArray getRaidBoardList(@RequestBody raidBoardModel vueModel) throws Exception {
 		JSONParser jsonParser = new JSONParser();
 		JSONArray resultArray = new JSONArray();
 		
-		if(Integer.toString(vueModel.getPagingNum()).equals("")) {
-			vueModel.setStartPagingNum(1);
-			vueModel.setStartPagingNum(10);
+		if(vueModel.getPagingNum().equals("0")) {
+			vueModel.setStartPagingNum("1");
+			vueModel.setEndPagingNum("20");
 		} else {
-			vueModel.setStartPagingNum(vueModel.getPagingNum() * 10 - 9);
-			vueModel.setStartPagingNum(vueModel.getPagingNum() * 10);
+			int startTemp = Integer.parseInt(vueModel.getPagingNum()) * 20 - 9;
+			int endTemp = Integer.parseInt(vueModel.getPagingNum()) * 20;
+			vueModel.setStartPagingNum(Integer.toString(startTemp));
+			vueModel.setEndPagingNum(Integer.toString(endTemp));
 		}
 		
 		ArrayList<raidBoardModel> boardList = mainService.getRaidBoardList(vueModel);
@@ -78,7 +81,7 @@ public class mainController {
 		JSONArray jsonArray = new JSONArray();
 		JSONArray resultArray = new JSONArray();
 		raidBoardModel model = new raidBoardModel();
-		model.setPagingNum("1");
+		//model.setPagingNum(1);
 		
 		ArrayList<raidBoardModel> boardHotList = mainService.getRaidHotBoardList(model);
 		for(int i=0; i<boardHotList.size(); i++) {

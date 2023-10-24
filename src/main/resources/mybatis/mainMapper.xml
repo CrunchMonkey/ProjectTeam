@@ -2,7 +2,7 @@
 
 <mapper namespace="com.example.demo.mapper.mainMapper">
 	<select id="getRaidBoardList" parameterType="raidBoardModel" resultType="raidBoardModel">
-		SELECT BOARD_ID AS boardId
+		SELECT a.BOARD_ID AS boardId
 			 , CONTENT AS content
 			 , DEADLINE AS deadLine
 			 , DEFFICULT_CD AS defficultCd
@@ -25,10 +25,15 @@
 			 , RAID_DIV_CD AS raidDivCd
 			 , RAID_DIV_NM AS raidDivNm
 			 , VIEW_COUNT AS viewCount
-		  FROM PROJECTTEAMDB.raid_board_table
+			 , rNum
+		  FROM PROJECTTEAMDB.raid_board_table a INNER JOIN 
+		  	 (
+		  	 	SELECT BOARD_ID , ROWNUM AS rNum
+		  	 	  FROM PROJECTTEAMDB.raid_board_table
+		  	 ) b ON a.BOARD_ID = b.BOARD_ID
 		 WHERE 1=1
-		   AND TAG_DIV_SEC=#{pagingNum};
-		   
+		   AND rNum BETWEEN #{startPagingNum} AND #{endPagingNum}
+	  ORDER BY rNum ASC
 		 
 	</select>
 	
