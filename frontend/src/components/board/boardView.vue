@@ -1,5 +1,5 @@
 <template>
-	<v-app id="inspire">
+	<v-app id="inspire" class="w-75 ma-auto">
 		<v-container>
       <v-row no-gutters>
         <v-col cols="12" lg="12">
@@ -141,6 +141,14 @@
 한니발 장군이 젊었을 때 이야기입니다.</h3>
 				</v-col>
 			</v-row>
+      <v-row>
+        <v-col>
+          <h3>댓글~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</h3>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-textarea bg-color="" color="cyan" rows="3" label="댓글"></v-textarea>
+      </v-row>
       <v-divider></v-divider>
 		</v-container>
 	</v-app>
