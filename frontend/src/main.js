@@ -8,11 +8,11 @@ import mainView from './components/mainPage/mainContainer.vue'
 
 const routes = [
   { 
-    path: '/api/about',
+    path: '/about',
     name: 'About',
     component: boardView },
   { 
-    path: '/api/',
+    path: '/',
     name: 'main',
     component: mainView },
 ];

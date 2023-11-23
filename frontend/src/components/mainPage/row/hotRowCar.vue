@@ -1,5 +1,6 @@
 <template>
     <v-row class="">
+		{{ list[0][0] }}
 		<v-col>
 			<v-carousel hide-delimiters="true" show-arrows="hover" height="auto">
 				<v-carousel-item v-for="(firstItem, i) in list" :key="i">
@@ -52,11 +53,13 @@ export default {
   created() {
     // REST API 엔드포인트 URL
     const apiUrl = '/api/getRaidHotBoardList';
-
+	
+	
     // Axios를 사용하여 데이터 가져오기
     axios.get(apiUrl)
       .then((response) => {
 		this.list = response.data;
+		console.log(this.list[0]);
         // 성공적으로 데이터를 받아온 경우
 		//console.log('콘솔로그', this.list[0]);
 		
@@ -66,8 +69,12 @@ export default {
         console.error('데이터를 가져오는 중 오류가 발생했습니다:', error);
       });
   },
-  data: () => ({
-	list: null,
-  }),
+  data() {
+    return {
+      // JSON 배열을 data에 초기화
+	  list: [[{"id" : "123"}]],
+      temp: [[{ key1: "value1", key2: "value2" }]]
+    };
+  }
 }
 </script>

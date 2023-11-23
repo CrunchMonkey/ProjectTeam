@@ -2,10 +2,9 @@
   <v-app>
     <v-main>
       
-      <boardView/>
+      <!--  <boardView/> -->
       <!--  <mainContainer/> -->
-      <router-link to="/api/about">About</router-link>
-      <router-link to="/api/hooter">hooter</router-link>
+      <button @click="goToAboutPage">About 페이지로 이동</button>
       <router-view></router-view>
     </v-main>
   </v-app>
@@ -13,25 +12,24 @@
 
 <script>
 // import mainContainer from './components/mainPage/mainContainer.vue'
-import boardView from './components/board/boardView.vue'
+//import boardView from './components/board/boardView.vue'
 
 export default {
   name: 'App',
   
 created() {
-  this.$router.push({ path: '/api/' }); // 어바웃으로 이동
+    this.$router.push({ path: '/' });
  },
   components: {
     //mainContainer,
-    boardView,
+    //boardView,
   },
   data: () => ({
     //
   }),
   methods: {
-    goToAbout() {
-      // $router를 사용하여 라우팅을 수행합니다.
-      alert("dd");
+    goToAboutPage() {
+      this.$router.push('/about');
     },
   },
 }
